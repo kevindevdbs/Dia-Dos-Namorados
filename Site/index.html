@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feliz Dia dos Namorados</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="welcome" class="welcome-overlay">
+    <h2>Bem-vindo(a) 💖</h2>
+    <p>Clique abaixo para iniciar a nossa musica!</p>
+    <button class="btn" onclick="startMusic()">Ativar Música</button>
+  </div>
+
+  <button id="musicButton" class="music-toggle" onclick="toggleMusic()">🎵 Música</button>
+
+  <audio id="musicPlayer" loop>
+    <source src="Melimoficial-meu-abrigo-e8f3b70b.mp3" type="audio/mp3">
+    Seu navegador não suporta o elemento de áudio.
+  </audio>
+
+  <header>
+    <h1>Feliz Dia dos Namorados</h1>
+    <p>Uma homenagem para quem faz nosso coração bater mais forte 💖</p>
+  </header>
+
+  <div class="intro-section">
+    <img src="img/Foto Contador.jpg" alt="Nós dois">
+    <p class="contador" id="contador-tempo">Estamos juntos há...</p>
+  </div>
+
+  <section>
+    <div class="card">
+      <h2>Mensagem Especial</h2>
+      <p>Hoje é o dia de celebrar o amor, os momentos juntos, e tudo o que ainda está por vir ❤️.</p>
+      <button class="btn" onclick="showSection('mensagem')">Leia mais</button>
+    </div>
+
+    <div class="card">
+      <h2>Nossas Memórias</h2>
+      <p>Fotos e videos dos nossos momentos juntos. ❤️</p>
+      <button class="btn" onclick="showSection('memorias')">Ver galeria</button>
+    </div>
+
+    <div class="card">
+      <h2>Nosso Futuro</h2>
+      <p>Podemos sonhar juntos com tudo que ainda vamos viver. De mãos dadas, sempre. ❤️</p>
+      <button class="btn" onclick="showSection('futuro')">Descubra</button>
+    </div>
+  </section>
+
+  <section id="mensagem" class="hidden">
+    <div class="card">
+      <h2>Meu Amor</h2>
+        <p>
+          Neste Dia dos Namorados, quero te lembrar do quanto sou grato por ter você na minha vida. Cada dia ao seu
+          lado é um capítulo único da história que estamos construindo juntos uma história feita de carinho,
+          cumplicidade, respeito e amor verdadeiro.
+        </p>
+
+        <p>
+          Você é meu porto seguro, minha paz nos dias turbulentos e minha alegria nas pequenas conquistas do dia a dia. É
+          no seu sorriso que encontro motivos para sorrir também, e no seu abraço que me sinto em casa.
+        </p>
+
+        <p>
+          Amar você é descobrir, todos os dias, que o coração tem espaço infinito quando se trata de alguém tão especial.
+          Obrigado por me escolher, por acreditar na gente e por me fazer sentir tão amado.
+        </p>
+
+        <p>
+          Hoje, mais do que nunca, celebro o privilégio de amar e ser amado por você. Que venham muitos outros dias dos
+          namorados, viagens, sonhos e momentos vividos de mãos dadas. Te amo com tudo o que sou, com tudo o que temos e
+          com tudo o que ainda vamos viver.
+        </p>
+
+        <p>Feliz Dia dos Namorados!</p>
+
+        <p>
+          Com todo o meu amor,
+          [Kevin Dias] ❤️
+        </p>
+      <button class="btn" onclick="showSection('inicio')">Voltar</button>
+    </div>
+  </section>
+
+  <section id="memorias" class="hidden">
+    <div class="card">
+      <h2>Galeria de Fotos</h2>
+      <div class="photo-gallery">
+        <div class="photo-item">
+          <img src="/img/Foto1.jpeg" alt="Foto 1">
+          <p>Nossa noite maravilhosa juntos na praça do Pápa ❤️</p>
+          <img src="img/Foto2.jpeg" alt="Foto 2">
+          <p>Uma noite de barzinho com você ❤️</p>
+          <img src="/img/Foto3.jpeg" alt="Foto 3">
+          <p>Primeira vez conhecendo Coco Bambu ❤️</p>
+          <img src="/img/Foto4.jpeg" alt="Foto 4">
+          <p>O Dia em que nos formamos juntos ❤️</p>
+          <p>Te Convido para preencher este site que criei para nosso relacionamento e melhorar ele ao longo do tempo comigo , voce topa? Te Amo ❤️</p>
+        </div>
+        
+      <h2>Galeria de Vídeos</h2>
+      <div class="video-gallery">
+        <video controls poster="img/Foto Video 1.png">
+          <source src="videos/Video 1.mp4" type="video/mp4">
+          Seu navegador não suporta vídeo.
+        </video>
+        <video controls poster="img/Foto Video 2.png">
+          <source src="videos/Video 2.mp4" type="video/mp4">
+          Seu navegador não suporta vídeo.
+        </video>
+        <video controls poster="img/Foto Video 3.png">
+          <source src="videos/Video 3.mp4" type="video/mp4">
+          Seu navegador não suporta vídeo.
+        </video>
+      </div>
+      <button class="btn" onclick="showSection('inicio')">Voltar</button>
+    </div>
+  </section>
+
+  <section id="futuro" class="hidden">
+    <div class="card">
+      <h2>Nosso Futuro</h2>
+      <p>Vamos continuar escrevendo essa linda história, cheia de amor, aventuras e muitos sonhos realizados juntos 💑
+      </p>
+      <button class="btn" onclick="showSection('inicio')">Voltar</button>
+    </div>
+  </section>
+
+  <footer>
+    Feito com ❤️ para celebrar o amor - Dia dos Namorados 2025
+  </footer>
+
+  <script src="javascript.js"></script>
+</body>
+
+</html>
