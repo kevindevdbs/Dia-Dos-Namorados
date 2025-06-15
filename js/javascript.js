@@ -82,3 +82,23 @@ function criarCoracao() {
 
 // Cria corações a cada 300ms
 setInterval(criarCoracao, 300);
+
+/* NOVO: controle das setas no slider em leque */
+function scrollSlider(direction) {
+  const slider = document.getElementById("cardSlider");
+  const cardWidth = slider.querySelector(".card-item").offsetWidth;
+  const gap = 16; // ou o gap que você usa entre cards no CSS
+  const scrollAmount = cardWidth + gap;
+
+  slider.scrollBy({
+    left: direction * scrollAmount,
+    behavior: "smooth",
+  });
+}
+
+// Scroll horizontal pelo mouse wheel
+const slider = document.getElementById("cardSlider");
+slider.addEventListener("wheel", (evt) => {
+  evt.preventDefault();
+  slider.scrollLeft += evt.deltaY;
+});

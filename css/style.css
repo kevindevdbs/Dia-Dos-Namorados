@@ -1,14 +1,15 @@
+/* Estilo geral */
 body {
   font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
-  background: #fff0f5;
-  color: #333;
+  background: #fff6f9; /* rosa clarinho suave */
+  color: #4a2c37; /* marrom rosado escuro */
   text-align: center;
 }
 
 header {
-  background-color: #ff69b4;
+  background-color: #d6336c; /* rosa vibrante */
   color: white;
   padding: 2rem 1rem;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -28,7 +29,7 @@ section {
 }
 
 .btn {
-  background-color: #ff69b4;
+  background-color: #e83e8c; /* rosa médio elegante */
   color: white;
   padding: 0.6rem 1.2rem;
   border: none;
@@ -40,7 +41,7 @@ section {
 }
 
 .btn:hover {
-  background-color: #ff1493;
+  background-color: #a52a5e; /* rosa escuro para hover */
 }
 
 .hidden {
@@ -48,16 +49,16 @@ section {
 }
 
 footer {
-  background-color: #ffe4e1;
+  background-color: #f8d7db; /* rosa pálido */
   padding: 1rem;
   font-size: 0.9rem;
-  color: #444;
+  color: #4a2c37; /* marrom rosado escuro para texto */
 }
 
 .welcome-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(255, 240, 245, 0.95);
+  background: rgba(214, 51, 108, 0.95); /* overlay rosa translúcido */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -69,7 +70,7 @@ footer {
   position: fixed;
   top: 10px;
   right: 10px;
-  background: #ff69b4;
+  background: #d6336c; /* rosa vibrante */
   border: none;
   color: white;
   padding: 0.6rem;
@@ -96,49 +97,102 @@ footer {
 
 .contador {
   font-size: 1.2rem;
-  color: #ff1493;
+  color: #a52a5e; /* rosa escuro */
   font-weight: bold;
 }
 
-
-
-.photo-gallery {
+/* Slider horizontal com scroll */
+/* ================================= */
+.card-slider {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  margin-top: 1.5rem;
-  justify-content: center;
+  overflow-x: auto;
+  gap: 1rem;
+  padding: 2rem 0;
+  scroll-behavior: smooth;
+  position: relative;
 }
 
-.photo-item {
-  flex: 1 1 calc(100% - 1.5rem);
-  max-width: calc(100% - 1.5rem);
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.card-item {
+  flex: 0 0 250px;
+  height: 350px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  background: white;
+  transition: transform 0.3s ease;
+  position: relative;
 }
 
-.photo-item img {
-  max-width: 300px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  margin-bottom: 1rem;
+.card-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-
-.photo-item p {
-  margin-bottom: 3rem;
-  font-size: 1rem;
-  text-align: center;
+.card-caption {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
   color: white;
-  background-color: #f077ce;
+  width: 100%;
+  text-align: center;
   padding: 10px;
-  border-radius: 30px;
-  width: 90%;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s;
 }
 
+.card-item:hover .card-caption {
+  opacity: 1;
+}
+
+/* Scrollbar personalizado */
+.card-slider::-webkit-scrollbar {
+  height: 10px;
+}
+
+.card-slider::-webkit-scrollbar-thumb {
+  background-color: #e83e8c;
+  border-radius: 5px;
+}
+
+.card-slider::-webkit-scrollbar-track {
+  background: #f8d7db;
+}
+
+/* Setas de navegação */
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #e83e8c; /* rosa médio */
+  border: none;
+  color: white;
+  font-size: 2.5rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(232, 62, 140, 0.6);
+  transition: background-color 0.3s ease;
+  user-select: none;
+  z-index: 10;
+}
+
+.slider-arrow:hover {
+  background-color: #a52a5e; /* rosa escuro */
+}
+
+.slider-arrow.left {
+  left: 10px;
+}
+
+.slider-arrow.right {
+  right: 10px;
+}
+
+/* Galeria de vídeos */
 .video-gallery {
   display: flex;
   flex-wrap: wrap;
@@ -155,11 +209,12 @@ footer {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+/* Corações animados */
 .heart {
   position: fixed;
   top: -50px;
   font-size: 24px;
-  color: #ff4d88;
+  color: #e83e8c; /* rosa médio */
   animation: fall 5s linear infinite;
   z-index: 9999;
   pointer-events: none;
